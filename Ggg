@@ -1,0 +1,21 @@
+val client = Blockstore.getClient(this)
+
+val data = StoreBytesData.Builder()
+
+        .setBytes(/* BYTE_ARRAY */)
+
+        .build()
+
+client.storeBytes(data)
+
+        .addOnSuccessListener{ result ->
+
+            Log.d(TAG, "Stored: ${result} bytes")
+
+        }
+
+        .addOnFailureListener { e ->
+
+            Log.e(TAG, “Failed to store bytes”, e)
+
+        }
